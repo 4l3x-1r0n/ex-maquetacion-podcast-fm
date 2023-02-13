@@ -1,0 +1,25 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.planes {
+    padding: 10rem 2rem;
+    background-color: v.$secundario;
+    &__heading {
+        @include m.decorateHeading(v.$blanco, v.$primario);
+    }
+
+    &__text {
+        color: v.$blanco;
+    }
+
+    &__cards {
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 4rem 0;
+        @include m.tablet {
+            flex-direction: row;
+        }
+    }
+}

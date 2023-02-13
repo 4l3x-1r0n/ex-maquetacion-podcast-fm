@@ -1,0 +1,32 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.promocion {
+    padding: 2rem;
+    background-color: v.$primario;
+
+    &__grid {
+        @include m.tablet {
+            @include m.grid(5, 4rem);
+            align-items: center;
+        }
+    }
+
+    &__img {
+        grid-column: 4 / 6;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+    }
+
+    &__content {
+        margin-top: 5rem;
+        grid-column: 1 / 4;
+    }
+
+    &__heading {
+        @include m.decorateHeading(v.$secundario, v.$blanco);
+    }
+}

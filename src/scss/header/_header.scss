@@ -1,0 +1,56 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.header {
+    background-image: linear-gradient(
+            v.$secundarioOpacity,
+            v.$secundarioOpacity
+        ),
+        url(../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 5rem 0;
+    position: relative;
+
+    &__logo {
+        width: 20rem;
+        margin: 0 auto;
+        @include m.desktop {
+            margin: 0;
+        }
+    }
+
+    &__content {
+        margin: 0 auto;
+
+        padding: 10rem 2rem;
+        @include m.desktop {
+            max-width: 50%;
+            margin: 0;
+            padding: 15rem 0;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+        font-size: 4.5rem;
+        color: v.$blanco;
+        @include m.desktop {
+            font-size: 6rem;
+            text-align: left;
+        }
+    }
+
+    &__btn {
+        @include m.boton(v.$primario, v.$secundario);
+        @include m.tablet {
+            position: relative;
+            left: 50%;
+            translate: -50% 0;
+        }
+        @include m.desktop {
+            position: unset;
+            translate: 0 0;
+        }
+    }
+}

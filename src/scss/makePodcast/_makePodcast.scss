@@ -1,0 +1,22 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.make-podcast {
+    padding: 2rem;
+
+    &__grid {
+        @include m.tablet {
+            @include m.grid(2, 4rem);
+            align-items: center;
+        }
+    }
+
+    &__content {
+        margin-top: 5rem;
+    }
+
+    &__heading {
+        @include m.decorateHeading(v.$secundario, v.$primario);
+
+    }
+}
